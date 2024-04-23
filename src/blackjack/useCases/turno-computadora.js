@@ -1,10 +1,10 @@
-import { pedirCarta, valorCarta } from "./";
+import { pedirCarta, valorCarta, crearCartaHTML } from "./";
 
 /**
  *
  * @param {Number} puntosMinimos puntos minimos
- * @param {HTMLElement} puntosHTML elemnto HTML para mostrar los puntos
- * @param {HTMLElement} divCartasComputadora elemnto HTML para mostrar los cartas
+ * @param {HTMLElement | Element} puntosHTML elemnto HTML para mostrar los puntos
+ * @param {HTMLElement | Element} divCartasComputadora elemnto HTML para mostrar los cartas
  * @param {Array<String>} deck
  */
 
@@ -24,7 +24,7 @@ export const turnoComputadora = (
     const carta = pedirCarta(deck);
 
     puntosComputadora = puntosComputadora + valorCarta(carta);
-    puntosHTML.innerText = puntosComputadora.toString();
+    puntosHTML.textContent = puntosComputadora.toString();
 
     const imgCarta = crearCartaHTML(carta);
     divCartasComputadora.append(imgCarta);
